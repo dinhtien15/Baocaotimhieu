@@ -18,13 +18,22 @@
    + Client : Địa chỉ IP nguồn, host nguồn   
    + VD  sshd: 192.168.1.1
 
-4. TCP Wapper : là một phương pháp chặn truy cập các dịch vụ trên máy chủ Linux của bạn thông qua hạn chế IP
+4. Add bảng định tuyến : static routing là phương thức định tuyến mà người quản trị sẽ nhập tất cả thông tin về đường đi cho router. Nguyên lý hoạt động như sau:
+   + người quản trị sẽ cấu hình các đường cố định cho router
+   + router sẽ cài đặt đường đi này vào bảng định tuyến
+   + gói dữ liệu được định tuyến theo đường cố định
+   + Cú pháp : ip route destination_subnet subnetmask{IP_next_hop|output_interface} [AD]
+   + destination_subnet : mạng đích đến , subnetmask: subnest mask của mạng đích  , Ip_next_hop : địa chỉ ip của trạm kế tiếp trên đường đi, output_interface:cổng ra trên router , AD: chỉ số AD của route khai báo
+   + thêm static route tạm thời : ip route add destinationIP/subnet via route dev [interface]
+   + thêm static route vĩnh viễn , tạo 1 tệp trong  /etc/sysconfig/network-scripts/route-[interfaces] , sau đó thêm 1 dòng giống ip route add , khởi động lại mạng dịch vụ(service network restart)
+
+5. TCP Wapper : là một phương pháp chặn truy cập các dịch vụ trên máy chủ Linux của bạn thông qua hạn chế IP
    + hosts.allow sẽ được ưu tiên hơn hosts.deny . Nesey xảy ra trường hợp cả 2 file này đều allow và deny cùng 1 IP, thì IP này sẽ vẫn được allow
    + bất kỳ thay đổi nào trong 2 file đều có hiệu lực ngay lập tức
 
-5. Permitsion của file , thư mục
+6. Permitsion của file , thư mục
    + quyền r : cho phép mở file và đọc
    + quyền w : cho phép ghi vào file hoặc xóa nội dung file, không cho phép xóa hoặc rename
    + quyền x : cho phép file được coi như một ctrinh có thể thực thi được
 
-6. Keepass : là một phần mềm mã nguồn mở miễn phí giúp lưu trữ tất cả mật khẩu,thông tin cá nhân. Chương trình này lưu trữ password của bạn trong một file csdl được mã hóa ở mức cao
+7. Keepass : là một phần mềm mã nguồn mở miễn phí giúp lưu trữ tất cả mật khẩu,thông tin cá nhân. Chương trình này lưu trữ password của bạn trong một file csdl được mã hóa ở mức cao
