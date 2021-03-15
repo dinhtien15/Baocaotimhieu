@@ -62,6 +62,16 @@
   
 10. Keepass : là một phần mềm mã nguồn mở miễn phí giúp lưu trữ tất cả mật khẩu,thông tin cá nhân. Chương trình này lưu trữ password của bạn trong một file csdl được mã hóa ở mức cao
 
-11. TCP Wapper : là một phương pháp chặn truy cập các dịch vụ trên máy chủ Linux của bạn thông qua hạn chế IP
+11. DenyHosts : một công cụ bảo mật ngăn chặn xâm nhập dựa trên nhật ký cho các máy chủ SSH được viêt bằn Python. DenyHosts được thiết kế để ngăn chặn các cuộc tấn công brute-force vào các máy chủ ssh bằng cách giám sát các nỗ lực đăng nhập không hợp lệ trong nhật ký xác thực và chặn các địa chỉ IP gốc bằng cách sử dụng /etc/hosts.deny. Cách cài đặt
+   + sudo apt-get install denyhosts
+   + truy cập tệp cấu hình /etc/denyhosts.conf , có rất nhiều luật mình có thể đặt như BLOCK_SERVICE = sshd , hoặc giới hạn ngưỡng từ chối đăng nhập DENY_THRESHOLD_ROOT = 1
+   + khởi động lại denyhosts : # sudo systemctl restart denyhosts.service
+   + bật denyhosts vào thời gian khởi động : # sudo systemctl enable denyhosts.service
+   + xem tệp nhật ký /var/log/allowhosts để tìm lỗi : # sudo grep 'something' /var/log/denyhosts
+   + Xem danh sách các hosts bị block : # sudo cat /etc/hosts.deny
+   + bật denyhosts : sudo systemctl start denyhosts.service
+   + tắt denyhosts : sudo systemctl stop denyhosts.service
+   
+13. TCP Wapper : là một phương pháp chặn truy cập các dịch vụ trên máy chủ Linux của bạn thông qua hạn chế IP
    + hosts.allow sẽ được ưu tiên hơn hosts.deny . Nesey xảy ra trường hợp cả 2 file này đều allow và deny cùng 1 IP, thì IP này sẽ vẫn được allow
    + bất kỳ thay đổi nào trong 2 file đều có hiệu lực ngay lập tức
