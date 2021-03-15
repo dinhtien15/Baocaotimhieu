@@ -22,3 +22,9 @@
    + hosts.allow sẽ được ưu tiên hơn hosts.deny . Nesey xảy ra trường hợp cả 2 file này đều allow và deny cùng 1 IP, thì IP này sẽ vẫn được allow
    + bất kỳ thay đổi nào trong 2 file đều có hiệu lực ngay lập tức
 
+5. Permitsion của file , thư mục
+   + quyền r : cho phép mở file và đọc
+   + quyền w : cho phép ghi vào file hoặc xóa nội dung file, không cho phép xóa hoặc rename
+   + quyền x : cho phép file được coi như một ctrinh có thể thực thi được
+
+6. Keepass : là một phần mềm mã nguồn mở miễn phí giúp lưu trữ tất cả mật khẩu,thông tin cá nhân. Chương trình này lưu trữ password của bạn trong một file csdl được mã hóa ở mức cao
