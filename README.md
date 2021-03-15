@@ -33,7 +33,10 @@
    + khởi động lại máy chủ : reboot
    + cập nhập CentOS : sudo yum update . Hệ thống sẽ cung cấp cho bạn danh sách các gói sẽ tải xuống, dung lượng ổ đĩa cần thiết
 
-6. Cấu hình tunning trong sysctl.conf , limits.conf
+6. SELinux : (Security-Enhanced Linux) là một modun bảo mật ở nhân của Linux, cung cấp cơ chế hỗ trợ các chính sách bảo mật kiểm soát truy cập(access control) , bao gồm các điều khiển truy nhập bắt buộc , có 3 mode : Enforcing,Permissive,Disabled
+   + Enforcing: chế độ mặc định sẽ cho phép và thực thi chính sách bảo mật SELinux trên hệ thống, từ chối các hành động truy cập và ghi nhật ký
+   + Permissive : SELinux được kích hoạt nhưng sẽ không thực thi chính sách bảo mật, chỉ cảnh báo và ghi lại các hành động
+   + Disable : SELinux bị vô hiệu hóa hoặc bị tắt đi
 
 8. Permitsion của file , thư mục
    + quyền r : cho phép mở file và đọc
