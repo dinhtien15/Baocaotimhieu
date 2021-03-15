@@ -47,8 +47,8 @@
    + quyền x : cho phép file được coi như một ctrinh có thể thực thi được
    + file ext3 : là file hệ thống nâng cấp của ext2, ext3 đưa vào thêm chức năng mới vô cùng quan trọng là journaling file system giúp thao tác dữ liệu an toàn hơn
    + file ext4 : là file mở rộng nâng cấp từ ext3 với khả năng tương thích ngược , là tổng hơp của các file ext trước cộng lại,chống phân mảnh dữ liệu.
-
-8. Keepass : là một phần mềm mã nguồn mở miễn phí giúp lưu trữ tất cả mật khẩu,thông tin cá nhân. Chương trình này lưu trữ password của bạn trong một file csdl được mã hóa ở mức cao
-9. TCP Wapper : là một phương pháp chặn truy cập các dịch vụ trên máy chủ Linux của bạn thông qua hạn chế IP
+   + 
+10. Keepass : là một phần mềm mã nguồn mở miễn phí giúp lưu trữ tất cả mật khẩu,thông tin cá nhân. Chương trình này lưu trữ password của bạn trong một file csdl được mã hóa ở mức cao
+11. TCP Wapper : là một phương pháp chặn truy cập các dịch vụ trên máy chủ Linux của bạn thông qua hạn chế IP
    + hosts.allow sẽ được ưu tiên hơn hosts.deny . Nesey xảy ra trường hợp cả 2 file này đều allow và deny cùng 1 IP, thì IP này sẽ vẫn được allow
    + bất kỳ thay đổi nào trong 2 file đều có hiệu lực ngay lập tức
