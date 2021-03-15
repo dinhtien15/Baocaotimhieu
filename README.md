@@ -18,3 +18,9 @@
    + cú pháp : Deamon: Client [ tùy chọn 1: tùy chọn 2 ]
    + Deamon : Dịch vụ cần áp đặt luật
    + Client : Địa chỉ IP nguồn, host nguồn   
+   + VD  sshd: 192.168.1.1
+
+4. TCP Wapper : là một phương pháp chặn truy cập các dịch vụ trên máy chủ Linux của bạn thông qua hạn chế IP
+   + hosts.allow sẽ được ưu tiên hơn hosts.deny . Nesey xảy ra trường hợp cả 2 file này đều allow và deny cùng 1 IP, thì IP này sẽ vẫn được allow
+   + bất kỳ thay đổi nào trong 2 file đều có hiệu lực ngay lập tức
+
