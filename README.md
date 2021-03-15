@@ -13,3 +13,8 @@
    + Bit Network : dùng để xác định mạng mà thiết bị kết nối vào
    + Bit Host : dùng để xác định thiết bị của mạng đó
    + Broadcast : là địa chỉ dùng đẻ gửi dữ liệu tới toàn bộ các IP trong cùng lớp mạng với nó
+
+3. Cấu hình hosts.allow , hosts.deny : Hai tệp tin này định nghĩa các quy tắc luật truy cập vào hệ thống ở tầng ứng dụng mạng.
+   + cú pháp : Deamon: Clinet [ tùy chọn 1: tùy chọn 2 ]
+   + Deamon : Dịch vụ cần áp đặt luật
+   + Client : Địa chỉ IP nguồn, host nguồn   
