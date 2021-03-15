@@ -57,10 +57,11 @@
 9.Đổi port ssh, cấu hình ssh giới hạn user truy cập
    + vô hiệu hóa đăng nhập từ xa với user root : ->truy cập file sshd_config, trong file này chỉnh PermitRootLogin no, sau đó khởi động lại ssh : #systemctl restart sshd
    + đổi port ssh truy cập /etc/ssh/sshd_config , có phần Port rồi chuyển sang port mà chúng ta cần sau đó lưu file lại
-   + Cho phép user hoặc group user được phép đăng nhập ssh , thêm mới vào file /etc/ssh/sshd_config, #llowUsers user1 user2 , #llowGroups Group1
-   + Không cho phép user hoặc group user được phép đăng nhập ssh, #DenyUsers user1 user2, #DenyGroups Group1
+   + Cho phép user hoặc group user được phép đăng nhập ssh , thêm mới vào file /etc/ssh/sshd_config, # AllowUsers user1 user2 , # AllowGroups Group1
+   + Không cho phép user hoặc group user được phép đăng nhập ssh, # DenyUsers user1 user2, # DenyGroups Group1
   
-11. Keepass : là một phần mềm mã nguồn mở miễn phí giúp lưu trữ tất cả mật khẩu,thông tin cá nhân. Chương trình này lưu trữ password của bạn trong một file csdl được mã hóa ở mức cao
-12. TCP Wapper : là một phương pháp chặn truy cập các dịch vụ trên máy chủ Linux của bạn thông qua hạn chế IP
+10. Keepass : là một phần mềm mã nguồn mở miễn phí giúp lưu trữ tất cả mật khẩu,thông tin cá nhân. Chương trình này lưu trữ password của bạn trong một file csdl được mã hóa ở mức cao
+
+11. TCP Wapper : là một phương pháp chặn truy cập các dịch vụ trên máy chủ Linux của bạn thông qua hạn chế IP
    + hosts.allow sẽ được ưu tiên hơn hosts.deny . Nesey xảy ra trường hợp cả 2 file này đều allow và deny cùng 1 IP, thì IP này sẽ vẫn được allow
    + bất kỳ thay đổi nào trong 2 file đều có hiệu lực ngay lập tức
