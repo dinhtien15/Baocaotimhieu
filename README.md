@@ -38,14 +38,17 @@
    + Permissive : SELinux được kích hoạt nhưng sẽ không thực thi chính sách bảo mật, chỉ cảnh báo và ghi lại các hành động
    + Disable : SELinux bị vô hiệu hóa hoặc bị tắt đi
 
-8. Permitsion của file , thư mục
+7. Permitsion của file , thư mục
+   + lệnh chmod : thay đổi quyền hạn đối với file, cú pháp #chmod[option][MODE] <file or thư mục> , vd #chmod 755 text.txt
+   + lệnh chown : thay đổi quyền sở hữu file , cú pháp #chown [option] user:group <file or thư mục> , vd #chown apache:apache web_directory , vd #gán user1 là chủ sở hữu thư mục /data/userlist: #chown user1 /data/userlist
+   + lệnh chgrp : thay đổi nhóm sở hữu , cú pháp #chgrp [option] <group> <file or thư mục>, vd #chgrp -c user text.txt
    + quyền r : cho phép mở file và đọc
    + quyền w : cho phép ghi vào file hoặc xóa nội dung file, không cho phép xóa hoặc rename
    + quyền x : cho phép file được coi như một ctrinh có thể thực thi được
-#file ext3: là file hệ thống nâng cấp của ext2, ext3 đưa vào thêm chức năng mới vô cùng quan trọng là journaling file system giúp thao tác dữ liệu an toàn hơn
-#file ext4 : là file mở rộng nâng cấp từ ext3 với khả năng tương thích ngược , là tổng hơp của các file ext trước cộng lại,chống phân mảnh dữ liệu.
+   + file ext3 : là file hệ thống nâng cấp của ext2, ext3 đưa vào thêm chức năng mới vô cùng quan trọng là journaling file system giúp thao tác dữ liệu an toàn hơn
+   + file ext4 : là file mở rộng nâng cấp từ ext3 với khả năng tương thích ngược , là tổng hơp của các file ext trước cộng lại,chống phân mảnh dữ liệu.
 
-7. Keepass : là một phần mềm mã nguồn mở miễn phí giúp lưu trữ tất cả mật khẩu,thông tin cá nhân. Chương trình này lưu trữ password của bạn trong một file csdl được mã hóa ở mức cao
-5. TCP Wapper : là một phương pháp chặn truy cập các dịch vụ trên máy chủ Linux của bạn thông qua hạn chế IP
+8. Keepass : là một phần mềm mã nguồn mở miễn phí giúp lưu trữ tất cả mật khẩu,thông tin cá nhân. Chương trình này lưu trữ password của bạn trong một file csdl được mã hóa ở mức cao
+9. TCP Wapper : là một phương pháp chặn truy cập các dịch vụ trên máy chủ Linux của bạn thông qua hạn chế IP
    + hosts.allow sẽ được ưu tiên hơn hosts.deny . Nesey xảy ra trường hợp cả 2 file này đều allow và deny cùng 1 IP, thì IP này sẽ vẫn được allow
    + bất kỳ thay đổi nào trong 2 file đều có hiệu lực ngay lập tức
