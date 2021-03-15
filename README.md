@@ -11,7 +11,6 @@
    + Default Gateway : như một cổng thoát hiểm, khi gói tin cần gửi đến địa chỉ không cùng mạng hiện tại, thì gói tin sẽ được gửi đến địa chỉ default gateway, thường là một interface của route nối đến mạng đó. Tại đây route sẽ dùng chức năng định tuyến để chuyển tiếp gói tin đi các hướng khác nhau. default gateway thường là địa chỉ ip có thể sử dụng đầu tiên của mạng đó
    + Frefix Length : là giá trị thường được viết sau một dấu / , giá trị này bằng tổng số bit 1 liên tiếp nhau trong subnet mask
    + Broadcast : là địa chỉ dùng đẻ gửi dữ liệu tới toàn bộ các IP trong cùng lớp mạng với nó
-
 3. Cấu hình hosts.allow , hosts.deny : Hai tệp tin này định nghĩa các quy tắc luật truy cập vào hệ thống ở tầng ứng dụng mạng.
    + cú pháp : Deamon: Client [ tùy chọn 1: tùy chọn 2 ]
    + Deamon : Dịch vụ cần áp đặt luật
@@ -25,15 +24,23 @@
    + Cú pháp : ip route destination_subnet subnetmask{IP_next_hop|output_interface} [AD]
    + destination_subnet : mạng đích đến , subnetmask: subnest mask của mạng đích  , Ip_next_hop : địa chỉ ip của trạm kế tiếp trên đường đi, output_interface:cổng ra trên router , AD: chỉ số AD của route khai báo
    + thêm static route tạm thời : ip route add destinationIP/subnet via route dev [interface]
-   + thêm static route vĩnh viễn , tạo 1 tệp trong  /etc/sysconfig/network-scripts/route-[interfaces] , sau đó thêm 1 dòng giống ip route add , khởi động lại mạng dịch vụ(service network restart)
+   + VD : ip route add 172.16.5.0/24 via 10.0.0.101 dev ens33
+   + thêm static route vĩnh viễn , tạo 1 tệp trong  /etc/sysconfig/network-scripts/route-[interfaces] , sau đó thêm 1 dòng giống ip route add vd : 172.16.5.0/24 via 10.0.0.101 dev ens33 , khởi động lại mạng dịch vụ(service network restart)
 
-5. TCP Wapper : là một phương pháp chặn truy cập các dịch vụ trên máy chủ Linux của bạn thông qua hạn chế IP
-   + hosts.allow sẽ được ưu tiên hơn hosts.deny . Nesey xảy ra trường hợp cả 2 file này đều allow và deny cùng 1 IP, thì IP này sẽ vẫn được allow
-   + bất kỳ thay đổi nào trong 2 file đều có hiệu lực ngay lập tức
+5. Update OS (yum update)
+   + kiểm tra bản cập nhật CentOS hiện có : sudo yum check-update
+   + dọn dẹp trình quản lý gói : sudo yum clean all
+   + khởi động lại máy chủ : reboot
+   + cập nhập CentOS : sudo yum update . Hệ thống sẽ cung cấp cho bạn danh sách các gói sẽ tải xuống, dung lượng ổ đĩa cần thiết
 
-6. Permitsion của file , thư mục
+6. Cấu hình tunning trong sysctl.conf , limits.conf
+
+8. Permitsion của file , thư mục
    + quyền r : cho phép mở file và đọc
    + quyền w : cho phép ghi vào file hoặc xóa nội dung file, không cho phép xóa hoặc rename
    + quyền x : cho phép file được coi như một ctrinh có thể thực thi được
 
 7. Keepass : là một phần mềm mã nguồn mở miễn phí giúp lưu trữ tất cả mật khẩu,thông tin cá nhân. Chương trình này lưu trữ password của bạn trong một file csdl được mã hóa ở mức cao
+5. TCP Wapper : là một phương pháp chặn truy cập các dịch vụ trên máy chủ Linux của bạn thông qua hạn chế IP
+   + hosts.allow sẽ được ưu tiên hơn hosts.deny . Nesey xảy ra trường hợp cả 2 file này đều allow và deny cùng 1 IP, thì IP này sẽ vẫn được allow
+   + bất kỳ thay đổi nào trong 2 file đều có hiệu lực ngay lập tức
