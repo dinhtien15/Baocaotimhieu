@@ -37,6 +37,8 @@
    + Enforcing: chế độ mặc định sẽ cho phép và thực thi chính sách bảo mật SELinux trên hệ thống, từ chối các hành động truy cập và ghi nhật ký
    + Permissive : SELinux được kích hoạt nhưng sẽ không thực thi chính sách bảo mật, chỉ cảnh báo và ghi lại các hành động
    + Disable : SELinux bị vô hiệu hóa hoặc bị tắt đi
+   + vô hiệu hóa SELinux vĩnh viễn ta sửa file /etc/selinux/config , thay đổi giá trị SELINUX=disabled , sau đó restart lại hệ thống để nhận config mới
+   + vô hiệu hóa SELinux tạm thời . Vô hiệu hóa SELinux tạm thời sẽ có tác dụng cho đến khi bạn restart lại hệ thống. Để vô hiệu hóa tạm thời ta sử dụng command : $ echo 0 > /selinux/enforce , để quay lại trạng thái chưa bị vô hiệu hóa : $ echo 1 > /selinux/enforce
 
 7. Permitsion của file , thư mục
    + lệnh chmod : thay đổi quyền hạn đối với file, cú pháp #chmod[option][MODE] <file or thư mục> , vd #chmod 755 text.txt
