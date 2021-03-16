@@ -27,7 +27,7 @@
    + VD : ip route add 172.16.5.0/24 via 10.0.0.101 dev ens33
    + thêm static route vĩnh viễn , tạo 1 tệp trong  /etc/sysconfig/network-scripts/route-[interfaces] , sau đó thêm 1 dòng giống ip route add vd : 172.16.5.0/24 via 10.0.0.101 dev ens33 , khởi động lại mạng dịch vụ(service network restart)
 
-5. Update OS (yum update)
+7. Update OS (yum update)
    + kiểm tra bản cập nhật CentOS hiện có : sudo yum check-update
    + dọn dẹp trình quản lý gói : sudo yum clean all
    + khởi động lại máy chủ : reboot
